@@ -140,8 +140,8 @@ class AtomHtmlPreviewView extends ScrollView
     if @editor?
       if atom.config.get("atom-html-preview.triggerOnSave")
         @editorSub.add @editor.onDidSave changeHandler
-      else
-        @editorSub.add @editor.onDidStopChanging changeHandler
+      # else
+      #   @editorSub.add @editor.onDidStopChanging changeHandler
       @editorSub.add @editor.onDidChangePath => @trigger 'title-changed'
 
   renderHTML: ->
